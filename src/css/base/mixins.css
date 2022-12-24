@@ -1,0 +1,14 @@
+.wrapper {
+	max-width: 600px;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: #F8FBFF;
+}
+
+[class*="__container"] {
+	margin: 0 auto;
+	max-width: 480px;
+}

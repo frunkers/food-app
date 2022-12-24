@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	color: #000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline-color: #FE554A;
+}
+
+html,
+body {
+	height: 780px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #666;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style-type: none;
+}
+
+img,
+svg,
+picture,
+video {
+	display: block;
+}
+
+main {
+	display: block;
+	flex: 1 1 auto;
+}
+
+#root,
+.App {
+	height: 100%;
+}
