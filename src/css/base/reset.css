@@ -9,11 +9,12 @@
 	margin: 0;
 	padding: 0;
 	outline-color: #FE554A;
+	outline-offset: 5px;
 }
 
 html,
 body {
-	height: 780px;
+	height: 865px;
 }
 
 html {
@@ -21,7 +22,8 @@ html {
 }
 
 body {
-	background: #666;
+	background: #E4E6E7;
+	font-family: 'DM Sans', sans-serif;
 }
 
 a {
