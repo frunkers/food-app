@@ -1,9 +1,0 @@
-.section-category__list {
-	display: flex;
-	align-items: center;
-	margin-top: 50px;
-}
-
-.section-category__list>*+* {
-	margin-left: 30px;
-}
