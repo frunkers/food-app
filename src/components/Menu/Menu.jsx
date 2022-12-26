@@ -1,13 +1,13 @@
 import { Component } from 'react';
-import './Menu.css';
-import home from './img/home.svg';
-import homeActive from './img/homeActive.svg';
-import like from './img/like.svg';
-import likeActive from './img/likeActive.svg';
-import notification from './img/notification.svg';
-import notificationActive from './img/notificationActive.svg';
-import buy from './img/buy.svg';
-import buyActive from './img/buyActive.svg';
+import "./Menu.css";
+import home from "../../assets/img/icons/home.svg";
+import homeActive from "../../assets/img/icons/homeActive.svg";
+import like from "../../assets/img/icons/like.svg";
+import likeActive from "../../assets/img/icons/likeActive.svg";
+import notification from "../../assets/img/icons/notification.svg";
+import notificationActive from "../../assets/img/icons/notificationActive.svg";
+import buy from "../../assets/img/icons/buy.svg";
+import buyActive from "../../assets/img/icons/buyActive.svg";
 
 
 class Menu extends Component {

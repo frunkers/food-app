@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import './Header.css';
-import avatar from './img/avatar.jpg';
+import "./Header.css";
+import avatar from "./img/avatar.jpg";
 
 class Header extends Component {
 	render() {
