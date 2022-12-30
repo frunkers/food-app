@@ -16,6 +16,11 @@
 	cursor: pointer;
 	padding: 10px;
 	opacity: 0.65;
+	transition: .3s;
+}
+
+.category__item:hover {
+	padding: 0;
 }
 
 .category__item+.category__item {

@@ -3,30 +3,37 @@ import "./Product.css";
 import like from "../../assets/img/icons/like.svg";
 import likeActive from "../../assets/img/icons/likeActive.svg";
 
-class Product extends Component {
+export default class Product extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: false
+			isActive: false
 		}
 	}
 
-	active = () => {
-		this.setState({
-			active: true
-		});
+	handleActive = () => {
+		this.setState(({ isActive }) => ({
+			isActive: !isActive
+		}));
 	}
 	
 	render() {
+		const { src, alt, title, description } = this.props; 
+		const { isActive } = this.state;
 		return (
-			<article onClick={this.state.active} className="product" tabIndex="0">
+			<article className="product" tabIndex="0">
 				<div className="product__content">
-					<img src={this.props.src} alt={this.props.alt} className="product__image" />
-					<p className="product__title">{this.props.title}</p>
-					<p className="product__description">{this.props.description}</p>
+					<img src={src} alt={alt} className="product__image" />
+					<p className="product__title">{title}</p>
+					<p className="product__description">{description}</p>
 					<div className="product__stats">
 						<div className="product__stat product__like">
-							<img src={like} alt="like" className="product__icon" />
+							<img onClick={this.handleActive}
+								src={isActive === true ? likeActive : like}
+								alt="like"
+								className="product__icon"
+								tabIndex="0"
+							/>
 						</div>
 					</div>
 				</div>
@@ -34,5 +41,3 @@ class Product extends Component {
 		)
 	}
 }
-
-export default Product;

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
 import Title from "./components/Title/Title";
@@ -37,53 +37,55 @@ const products = [
 			alt: "nonest kids appley ever after organic juice drink",
 			title: "Honest Kids® Appley Ever After® Organic Juice Drink",
 			description: "There are 190 calories in a small McDonald's Strawberry Banana Smoothie"
-		}
+		},
 	]
 ];
 
-class App extends Component {
+export default class App extends Component {
 	render() {
 		return (
-			<div className="App">
-				<div className="wrapper">
-					<Header />
+			<Fragment>
+				<Header />
 
-					<main>
-						<section className="category">
-							<div className="category__container">
-								<Title text="Enjoy Delicious food" />
-								<Category />
+				<main>
+					<section className="category">
+						<div className="category__container">
+							<Title text="Enjoy Delicious food" />
+							<Category />
+						</div>
+					</section>
+
+					<section className="products">
+						<div className="products__container">
+							<div className="products__header">
+								<h3 className="products__title">Popular in <span className="products__title_category">burgers</span></h3>
+								<a href="#!" className="products__all">View all(29)</a>
 							</div>
-						</section>
+							
+							<div className="products__content">
+								{
+									products.map((category) => (
+										category.map((product) => {
+											const { src, alt, title, description } = product;
 
-						<section className="products">
-							<div className="products__container">
-								<div className="products__header">
-									<h3 className="products__title">Popular in <span className="products__title_category">burgers</span></h3>
-									<a href="#!" className="products__all">View all(29)</a>
-								</div>
-								
-								<div className="products__content">
-									{
-										products.map((category) => (
-											category.map((product) => (
-												<Product src={product.src} 
-													alt={product.alt}
-													title={product.title}
-													description={product.description} />
-											))
-										))
-									}
-								</div>
+											return (
+												<Product src={src}
+													alt={alt}
+													title={title}
+													description={description}
+													key={title}
+												/>
+											)
+										})
+									))
+								}
 							</div>
-						</section>
-					</main>
+						</div>
+					</section>
+				</main>
 
-					<Menu />
-				</div>
-			</div>
+				<Menu />
+			</Fragment>
 		)
 	}	
 }
-
-export default App;
