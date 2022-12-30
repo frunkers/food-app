@@ -29,7 +29,7 @@ export default class Product extends Component {
 					<div className="product__stats">
 						<div className="product__stat product__like">
 							<img onClick={this.handleActive}
-								src={isActive === true ? likeActive : like}
+								src={isActive? likeActive : like}
 								alt="like"
 								className="product__icon"
 								tabIndex="0"

@@ -12,8 +12,9 @@ import product1 from "./assets/img-db/products/burger/big-mac.jpg";
 import product2 from "./assets/img-db/products/drink/strawberry-banana-smoothie.jpg";
 import product3 from "./assets/img-db/products/drink/nonest-kids-appley-ever-after-organic-juice-drink.jpg";
 
-import category1 from "./assets/img-db/categories/burger.svg";
-import category2 from "./assets/img-db/categories/drink.svg";
+import category1 from "./assets/img-db/categories/burger.png";
+import category2 from "./assets/img-db/categories/drink.png";
+import category3 from "./assets/img-db/categories/breakfast.png";
 
 import avatar from "./assets/img-db/user/avatar.jpg";
 
@@ -47,10 +48,11 @@ const products = [
 const categories = [
 	{name: "Burger", color: "#FB8C00", image: category1},
 	{name: "Drink", color: "#1E88E5", image: category2},
+	{name: "Breakfast", color: "#558B2F", image: category3},
 ];
 
 const user = {
-	avatar: avatar
+	avatar: avatar,
 };
 
 
@@ -65,7 +67,7 @@ export default class App extends Component {
 				<main>
 					<section className="category">
 						<div className="category__container">
-							<Title text="Enjoy Delicious food" />
+							<Title text="Food categories" />
 							<Category array={categories}/>
 						</div>
 					</section>
@@ -102,5 +104,5 @@ export default class App extends Component {
 				<Menu />
 			</Fragment>
 		)
-	}	
+	}
 }

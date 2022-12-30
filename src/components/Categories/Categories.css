@@ -1,11 +1,12 @@
 .category__list {
 	display: flex;
 	align-items: center;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .category__item {
-	width: 108px;
+	min-width: 108px;
+	max-width: 108px;
 	height: 140px;
 	display: flex;
 	align-items: center;
@@ -59,7 +60,7 @@
 /* / category__item_active */
 
 .category__icon {
-	width: 30px;
+	width: 38px;
 }
 
 .category__name {
