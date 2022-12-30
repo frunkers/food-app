@@ -3,6 +3,7 @@
 *::after {
 	box-sizing: border-box;
 	color: #000;
+	font-family: 'DM Sans', sans-serif;
 }
 
 * {
@@ -23,7 +24,6 @@ html {
 
 body {
 	background: #E4E6E7;
-	font-family: 'DM Sans', sans-serif;
 }
 
 a {
