@@ -19,7 +19,7 @@
 	transition: .3s;
 }
 
-.category__item:hover {
+.category__item_hover:hover {
 	padding: 0;
 }
 

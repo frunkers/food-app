@@ -2,7 +2,7 @@ import { Component } from 'react';
 import "./Header.css";
 import avatar from "./img/avatar.jpg";
 
-class Header extends Component {
+export default class Header extends Component {
 	render() {
 		return (
 			<header className="header">
@@ -15,9 +15,7 @@ class Header extends Component {
 						</div>
 					</div>
 
-					
-
-					<div tabIndex="0" className="avatar header__el">
+					<div className="avatar header__el" tabIndex="0">
 						<img src={avatar} alt="avatar" className="avatar__icon" />
 					</div>
 				</div>
@@ -25,5 +23,3 @@ class Header extends Component {
 		)
 	}
 }
-
-export default Header;

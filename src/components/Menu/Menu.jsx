@@ -9,33 +9,34 @@ import notificationActive from "../../assets/img/icons/notificationActive.svg";
 import buy from "../../assets/img/icons/buy.svg";
 import buyActive from "../../assets/img/icons/buyActive.svg";
 
-
-class Menu extends Component {
+export default class Menu extends Component {
 	constructor() {
 		super();
 		this.state = {
-			setActiveIndex: 0
+			isActive: 0
 		}	
 	}
 	
-	active = (index) => {
+	handleActive = (index) => {
 		this.setState({
-			setActiveIndex: index
+			isActive: index
 		});
 	}
 
 	render() {
+		const { isActive } = this.state;
+
 		return (
 			<section className="menu">
 				<div className="menu__container">
 					<nav className="menu-wrap">
 						<ul className="menu__list">
-							<li onClick={() => this.active(0)} className="menu__item" tabIndex="0">
-								<img src={this.state.setActiveIndex == 0 ? homeActive : home} alt="home" className="menu__icon" />
+							<li onClick={() => this.handleActive(0)} className="menu__item" tabIndex="0">
+								<img src={isActive === 0 ? homeActive : home} alt="home" className="menu__icon" />
 							</li>
 
-							<li onClick={() => this.active(1)} className="menu__item" tabIndex="0">
-								<img src={this.state.setActiveIndex == 1 ? likeActive : like} alt="like" className="menu__icon" />
+							<li onClick={() => this.handleActive(1)} className="menu__item" tabIndex="0">
+								<img src={isActive === 1 ? likeActive : like} alt="like" className="menu__icon" />
 							</li>
 
 							<li className="menu__item" tabIndex="0">
@@ -46,12 +47,12 @@ class Menu extends Component {
 								</div>
 							</li>
 
-							<li onClick={() => this.active(3)} className="menu__item" tabIndex="0">
-								<img src={this.state.setActiveIndex == 3 ? notificationActive : notification} alt="notification" className="menu__icon" />
+							<li onClick={() => this.handleActive(3)} className="menu__item" tabIndex="0">
+								<img src={isActive === 3 ? notificationActive : notification} alt="notification" className="menu__icon" />
 							</li>
 
-							<li onClick={() => this.active(4)} className="menu__item" tabIndex="0">
-								<img src={this.state.setActiveIndex == 4 ? buyActive : buy} alt="buy" className="menu__icon" />
+							<li onClick={() => this.handleActive(4)} className="menu__item" tabIndex="0">
+								<img src={isActive === 4 ? buyActive : buy} alt="buy" className="menu__icon" />
 							</li>
 						</ul>
 					</nav>
@@ -60,5 +61,3 @@ class Menu extends Component {
 		)
 	}
 }
-
-export default Menu;

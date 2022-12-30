@@ -3,45 +3,48 @@ import "./Categories.css";
 import burger from "./img/burger.svg";
 import drink from "./img/drink.svg";
 
-class Category extends Component {
+const categories = [
+	{name: "Burger", color: "#FB8C00", image: burger},
+	{name: "Drink", color: "#1E88E5", image: drink}
+];
+
+export default class Category extends Component {
 	constructor() {
 		super();
 		this.state = {
-			setActiveIndex: 0
+			isActive: 0
 		}
 	}
 
 	handleActive = (index) => {
 		this.setState({
-			setActiveIndex: index
+			isActive: index
 		})
 	}
 
 	render() {
 		return (
 			<ul className="category__list">
-				<li onClick={() => this.handleActive(0)}
-					className={"category__item " + (this.state.setActiveIndex === 0 ? "category__item_active": "")}
-					style={{borderColor: "#FB8C0066"}}
-					tabIndex="0">
-					<div className="category__content" style={{background: "#FB8C0033"}}>
-						<img src={burger} alt="burger" className="category__icon" />
-						<p className="category__name">Burger</p>
-					</div>
-				</li>
-				
-				<li onClick={() => this.handleActive(1)}
-					className={"category__item " + (this.state.setActiveIndex === 1 ? "category__item_active": "")}
-					style={{borderColor: "#1E88E566"}}
-					tabIndex="0">
-					<div className="category__content" style={{background: "#1E88E533"}}>
-						<img src={drink} alt="drink" className="category__icon" />
-						<p className="category__name">Drink</p>
-					</div>
-				</li>
+				{
+					categories.map((el, index) => {
+						const { name, color, image } = el;
+						const { isActive } = this.state;
+
+						return (
+							<li onClick={() => this.handleActive(index)}
+								className={"category__item" + (isActive === index ? " category__item_active": " category__item_hover")}
+								style={{borderColor: `${color + 66}`}}
+								tabIndex="0"
+								key={name}>
+								<div className="category__content" style={{background: `${color}` + 33}}>
+									<img src={image} alt="burger" className="category__icon" />
+									<p className="category__name">{name}</p>
+								</div>
+							</li>
+						)
+					})
+				}
 			</ul>
 		)
 	}
 }
-
-export default Category;
