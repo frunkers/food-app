@@ -1,16 +1,9 @@
 import { Component } from 'react';
 import "./Categories.css";
-import burger from "./img/burger.svg";
-import drink from "./img/drink.svg";
-
-const categories = [
-	{name: "Burger", color: "#FB8C00", image: burger},
-	{name: "Drink", color: "#1E88E5", image: drink}
-];
 
 export default class Category extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			isActive: 0
 		}
@@ -26,7 +19,7 @@ export default class Category extends Component {
 		return (
 			<ul className="category__list">
 				{
-					categories.map((el, index) => {
+					this.props.array.map((el, index) => {
 						const { name, color, image } = el;
 						const { isActive } = this.state;
 

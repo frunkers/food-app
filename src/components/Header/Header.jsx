@@ -1,9 +1,14 @@
 import { Component } from 'react';
 import "./Header.css";
-import avatar from "./img/avatar.jpg";
 
 export default class Header extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
+		const { avatar } = this.props;
+
 		return (
 			<header className="header">
 				<div className="header__container">

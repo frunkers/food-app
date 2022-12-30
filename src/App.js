@@ -7,18 +7,21 @@ import Product from "./components/Product/Product"
 import "./css/main.css";
 import "./App.css";
 
-// * products
-// burger
-import bigMac from "./assets/img/products/burger/big-mac.jpg";
+// import img-db
+import product1 from "./assets/img-db/products/burger/big-mac.jpg";
+import product2 from "./assets/img-db/products/drink/strawberry-banana-smoothie.jpg";
+import product3 from "./assets/img-db/products/drink/nonest-kids-appley-ever-after-organic-juice-drink.jpg";
 
-// drink
-import strawberryBananaSmoothie from "./assets/img/products/drink/strawberry-banana-smoothie.jpg";
-import nonestKidsAppleyEverAfterOrganicJuiceDrink from "./assets/img/products/drink/nonest-kids-appley-ever-after-organic-juice-drink.jpg";
+import category1 from "./assets/img-db/categories/burger.svg";
+import category2 from "./assets/img-db/categories/drink.svg";
+
+import avatar from "./assets/img-db/user/avatar.jpg";
+
 
 const products = [
 	[
 		{
-			src: bigMac,
+			src: product1,
 			alt: "big mac",
 			title: "Big Mac®",
 			description: "No 10 opp lekki phase 1 bridge in sangotedo estate"
@@ -26,14 +29,14 @@ const products = [
 	],
 	[
 		{
-			src: strawberryBananaSmoothie,
+			src: product2,
 			alt: "strawberry banana smoothie",
 			title: "Strawberry Banana Smoothie",
 			description: "There are 190 calories in a small McDonald's Strawberry Banana Smoothie"
 		},
 
 		{
-			src: nonestKidsAppleyEverAfterOrganicJuiceDrink,
+			src: product3,
 			alt: "nonest kids appley ever after organic juice drink",
 			title: "Honest Kids® Appley Ever After® Organic Juice Drink",
 			description: "There are 190 calories in a small McDonald's Strawberry Banana Smoothie"
@@ -41,17 +44,29 @@ const products = [
 	]
 ];
 
+const categories = [
+	{name: "Burger", color: "#FB8C00", image: category1},
+	{name: "Drink", color: "#1E88E5", image: category2},
+];
+
+const user = {
+	avatar: avatar
+};
+
+
 export default class App extends Component {
 	render() {
+		const { avatar } = user;
+
 		return (
 			<Fragment>
-				<Header />
+				<Header avatar={avatar}/>
 
 				<main>
 					<section className="category">
 						<div className="category__container">
 							<Title text="Enjoy Delicious food" />
-							<Category />
+							<Category array={categories}/>
 						</div>
 					</section>
 
