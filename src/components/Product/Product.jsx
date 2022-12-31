@@ -23,7 +23,7 @@ export default class Product extends Component {
 		return (
 			<article className="product" tabIndex="0">
 				<div className="product__content">
-					<img src={src} alt={alt} className="product__image" />
+					<img width="170" height="94" src={src} alt={alt} className="product__image" />
 					<p className="product__title">{title}</p>
 					<p className="product__description">{description}</p>
 					<div className="product__stats">

@@ -16,15 +16,20 @@ export default class Category extends Component {
 	}
 
 	render() {
+		const { array, getIdCategory } = this.props;
+		const { isActive } = this.state;
+
 		return (
 			<ul className="category__list">
 				{
-					this.props.array.map((el, index) => {
+					array.map((el, index) => {
 						const { name, color, image } = el;
-						const { isActive } = this.state;
 
 						return (
-							<li onClick={() => this.handleActive(index)}
+							<li onClick={() => {
+									this.handleActive(index);
+									getIdCategory(index);
+								}}
 								className={"category__item" + (isActive === index ? " category__item_active": " category__item_hover")}
 								style={{borderColor: `${color + 66}`}}
 								tabIndex="0"
