@@ -24,9 +24,14 @@
 	margin-left: 26px;
 }
 
+.header__menu:hover>.header__content>.header__item {
+	width: 30px;
+}
+
 .header__item {
 	width: 30px;
 	height: 2.1px;
+	transition: .3s;
 	background: #444;
 }
 

@@ -20,6 +20,7 @@ export default class Product extends Component {
 	render() {
 		const { src, alt, title, description } = this.props; 
 		const { isActive } = this.state;
+		
 		return (
 			<article className="product" tabIndex="0">
 				<div className="product__content">
