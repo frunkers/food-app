@@ -90,20 +90,18 @@ export default class App extends Component {
 							
 							<div className="products__content">
 								{
-									products.map((category) => (
-										category.map((product) => {
-											const { src, alt, title, description } = product;
+									products[idCategory].map((product) => {
+										const { src, alt, title, description } = product;
 
-											return (
-												<Product src={src}
-													alt={alt}
-													title={title}
-													description={description}
-													key={title}
-												/>
-											)
-										})
-									))
+										return (
+											<Product src={src}
+												alt={alt}
+												title={title}
+												description={description}
+												key={title}
+											/>
+										)
+									})
 								}
 							</div>
 						</div>
